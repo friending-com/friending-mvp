@@ -1,18 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Icon from './components/Icon';
 import Modal from './components/Modal';
-
+import { AnimatePresence } from 'framer-motion';
 function App() {
   const [modal, setModal] = useState(false);
+  const timerRef = useRef<any>(null);
   useEffect(() => {
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setModal(true);
     }, 3000);
+    return () => clearTimeout(timerRef.current);
   }, []);
+  const handleClick = () => {
+    clearTimeout(timerRef.current);
+    setModal(true);
+  };
   return (
     <Wrapper>
-      {modal && <Modal setModal={() => setModal(false)} />}
+      <AnimatePresence>
+        {modal && <Modal setModal={() => setModal(false)} />}
+      </AnimatePresence>
       <Section>
         <ImageWrapper>
           <Image src="/rabit.png" alt="rabbit" />
@@ -42,7 +50,7 @@ function App() {
       </Section>
       <ButtonWrapper>
         <Button>갤러리에 저장</Button>
-        <Button>앱 다운로드</Button>
+        <Button onClick={handleClick}>앱 다운로드</Button>
       </ButtonWrapper>
     </Wrapper>
   );
@@ -127,6 +135,7 @@ const ButtonWrapper = styled.div`
   gap: 10px;
 `;
 const Button = styled.div`
+  cursor: pointer;
   background-color: black;
   color: white;
   padding: 20px;

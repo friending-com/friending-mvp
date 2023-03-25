@@ -1,11 +1,27 @@
 import styled from 'styled-components';
 import Layout from './Layout';
-
+import { motion } from 'framer-motion';
 const Modal = ({ setModal }: { setModal: () => void }) => {
+  const animation = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
   return (
     <>
       <Layout />
-      <Wrapper>
+      <Wrapper
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <Xbutton src="/xbutton.png" onClick={setModal} />
         <Logo src="/logo.png" alt="img" />
         <PlayStore>
@@ -24,7 +40,7 @@ const Modal = ({ setModal }: { setModal: () => void }) => {
 };
 
 export default Modal;
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   position: absolute;
   background-color: white;
   min-height: 400px;

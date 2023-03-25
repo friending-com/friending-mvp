@@ -1,12 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const Layout = () => {
-  return <Background />;
+  const animation = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+  return (
+    <Background
+      variants={animation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    />
+  );
 };
 
 export default Layout;
-const Background = styled.div`
+const Background = styled(motion.div)`
   display: flex;
   justify-content: center;
   position: absolute;
