@@ -16,6 +16,28 @@ function App() {
     clearTimeout(timerRef.current);
     setModal(true);
   };
+  const LinkObjectArray = [
+    {
+      src: '/call.png',
+      link: '010-4854-3312',
+    },
+    {
+      src: '/instagram.png',
+      link: 'https://instagram.com/kgm0_24?igshid=ZDdkNTZiNTM=',
+    },
+    {
+      src: '/facebook.png',
+      link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
+    },
+    {
+      src: '/twitter.png',
+      link: 'https://twitter.com/hVG5DrtLn08n7TA',
+    },
+    {
+      src: '/talk.png',
+      link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
+    },
+  ];
   return (
     <Wrapper>
       <AnimatePresence>
@@ -23,18 +45,12 @@ function App() {
       </AnimatePresence>
       <Section>
         <ImageWrapper>
-          <Image src="/rabit.png" alt="rabbit" />
+          <Image src="/profile.jpeg" alt="profile" />
         </ImageWrapper>
-        <Name>Jeans</Name>
+        <Name>Friending</Name>
         <IconWrapper>
-          {[
-            '/call.png',
-            '/instagram.png',
-            '/facebook.png',
-            '/twitter.png',
-            '/talk.png',
-          ].map((src) => (
-            <Icon src={src} key={src} />
+          {LinkObjectArray.map((link) => (
+            <Icon src={link.src} key={link.src} link={link.link} />
           ))}
         </IconWrapper>
         <FeatureWrapper>
@@ -75,7 +91,10 @@ const Section = styled.div`
   min-height: 600px;
 `;
 const Image = styled.img`
-  width: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 `;
 const ImageWrapper = styled.div`
   border-radius: 50%;

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Icon = ({ src }: { src: string }) => {
+const Icon = ({ src, link }: { src: string; link: string }) => {
   return (
     <IconBack>
-      <IconImg src={src}></IconImg>
+      <a href={link}>
+        <IconImg src={src}></IconImg>
+      </a>
     </IconBack>
   );
 };
