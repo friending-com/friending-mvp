@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Icon = ({ src, link }: { src: string; link: string }) => {
   return (
     <IconBack>
-      <a href={link}>
+      <a href={link.includes('010-') ? `tel:${link}` : link}>
         <IconImg src={src}></IconImg>
       </a>
     </IconBack>
