@@ -36,4 +36,5 @@ const Background = styled(motion.div)`
   background: rgba(0, 0, 0, 0.3);
   width: 100vw;
   height: 100vh;
+  z-index: 2;
 `;
