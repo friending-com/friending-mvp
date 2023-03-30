@@ -2,18 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Icon from './components/Icon';
 import Modal from './components/Modal';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 function App() {
   const [modal, setModal] = useState(false);
-  const timerRef = useRef<any>(null);
-  useEffect(() => {
-    timerRef.current = setTimeout(() => {
-      setModal(true);
-    }, 3000);
-    return () => clearTimeout(timerRef.current);
-  }, []);
+  // const timerRef = useRef<any>(null);
+  const [rotate, setRotate] = useState(true);
+  // useEffect(() => {
+  //   timerRef.current = setTimeout(() => {
+  //     setModal(true);
+  //   }, 3000);
+  //   return () => clearTimeout(timerRef.current);
+  // }, []);
   const handleClick = () => {
-    clearTimeout(timerRef.current);
+    // clearTimeout(timerRef.current);
     setModal(true);
   };
   const LinkObjectArray = [
@@ -38,32 +39,76 @@ function App() {
       link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
     },
   ];
+  const animationProps = {
+    initial: { rotateY: -180, opacity: 0 },
+    animate: { rotateY: 0, opacity: 1, transition: { duration: 1 } },
+    exit: { rotateY: 180, opacity: 0, transition: { duration: 1 } },
+  };
   return (
     <Wrapper>
       <AnimatePresence>
         {modal && <Modal setModal={() => setModal(false)} />}
       </AnimatePresence>
-      <Section>
-        <ImageWrapper>
-          <Image src="/profile.jpeg" alt="profile" />
-        </ImageWrapper>
-        <Name>Friending</Name>
-        <IconWrapper>
-          {LinkObjectArray.map((link) => (
-            <Icon src={link.src} key={link.src} link={link.link} />
-          ))}
-        </IconWrapper>
-        <FeatureWrapper>
-          <Feature>
-            <FeatureIcon src="fire.png" width="20px" height="20px" alt="img" />
-            춤추기
-          </Feature>
-          <Feature>
-            <FeatureIcon src="fire.png" width="20px" height="20px" alt="img" />
-            코딩하기
-          </Feature>
-        </FeatureWrapper>
-      </Section>
+      <AnimatePresence initial={false}>
+        {rotate ? (
+          <Section
+            variants={animationProps}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            key="section"
+          >
+            <FlipButton
+              src="/flip.png"
+              onClick={() => setRotate((prev) => !prev)}
+            />
+
+            <ImageWrapper>
+              <Image src="/profile.jpeg" alt="profile" />
+            </ImageWrapper>
+            <Name>김규민</Name>
+            <IconWrapper>
+              {LinkObjectArray.map((link) => (
+                <Icon src={link.src} key={link.src} link={link.link} />
+              ))}
+            </IconWrapper>
+            <FeatureWrapper>
+              <Feature>
+                <FeatureIcon
+                  src="fire.png"
+                  width="20px"
+                  height="20px"
+                  alt="img"
+                />
+                춤추기
+              </Feature>
+              <Feature>
+                <FeatureIcon
+                  src="fire.png"
+                  width="20px"
+                  height="20px"
+                  alt="img"
+                />
+                코딩하기
+              </Feature>
+            </FeatureWrapper>
+          </Section>
+        ) : (
+          <Section
+            variants={animationProps}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            key="section1"
+          >
+            <FlipButton
+              src="/flip.png"
+              onClick={() => setRotate((prev) => !prev)}
+            />
+            <NameCard src="/namecard.jpeg" alt="img"></NameCard>
+          </Section>
+        )}
+      </AnimatePresence>
       <ButtonWrapper>
         <Button>갤러리에 저장</Button>
         <Button onClick={handleClick}>앱 다운로드</Button>
@@ -80,8 +125,10 @@ const Wrapper = styled.div`
   justify-content: center;
   border-style: solid;
   flex-direction: column;
+  max-width: 360px;
 `;
-const Section = styled.div`
+
+const Section = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,6 +136,7 @@ const Section = styled.div`
   background-color: #eeeeee;
   border-radius: 25px;
   min-height: 600px;
+  position: absolute;
 `;
 const Image = styled.img`
   width: 100%;
@@ -152,6 +200,8 @@ const ButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  position: fixed;
+  bottom: 10px;
 `;
 const Button = styled.div`
   cursor: pointer;
@@ -159,4 +209,25 @@ const Button = styled.div`
   color: white;
   padding: 20px;
   border-radius: 10px;
+`;
+const NameCard = styled.img`
+  width: 100%;
+  max-width: 320px;
+  margin-left: 20px;
+  margin-right: 20px;
+`;
+
+const FlipButton = styled.img`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  width: 30px;
+`;
+
+const AnimationWrapper = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
