@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Icon from './components/Icon';
 import Modal from './components/Modal';
 import { AnimatePresence, motion } from 'framer-motion';
+import Footer from './components/Footer';
 function App() {
   const [modal, setModal] = useState(false);
   // const timerRef = useRef<any>(null);
@@ -62,7 +63,6 @@ function App() {
               src="/flip.png"
               onClick={() => setRotate((prev) => !prev)}
             />
-
             <ImageWrapper>
               <Image src="/profile.jpeg" alt="profile" />
             </ImageWrapper>
@@ -109,10 +109,7 @@ function App() {
           </Section>
         )}
       </AnimatePresence>
-      <ButtonWrapper>
-        <Button>갤러리에 저장</Button>
-        <Button onClick={handleClick}>앱 다운로드</Button>
-      </ButtonWrapper>
+      <Footer handleClick={handleClick} />
     </Wrapper>
   );
 }
@@ -194,22 +191,7 @@ const FeatureIcon = styled.img`
   width: 20px;
   height: 20px;
 `;
-const ButtonWrapper = styled.div`
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: fixed;
-  bottom: 10px;
-`;
-const Button = styled.div`
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-`;
+
 const NameCard = styled.img`
   width: 100%;
   max-width: 320px;
@@ -223,11 +205,4 @@ const FlipButton = styled.img`
   right: 20px;
   cursor: pointer;
   width: 30px;
-`;
-
-const AnimationWrapper = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `;
