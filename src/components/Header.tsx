@@ -15,7 +15,9 @@ const Wrapper = styled.div`
   width: 360px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  align-items: center;
 `;
 const Title = styled.div`
   font-weight: 700;
@@ -25,4 +27,5 @@ const Title = styled.div`
 const FlipButton = styled.img`
   cursor: pointer;
   width: 30px;
+  margin-right: 15px;
 `;
