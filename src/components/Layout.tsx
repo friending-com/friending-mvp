@@ -28,7 +28,7 @@ export default Layout;
 const Background = styled(motion.div)`
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
