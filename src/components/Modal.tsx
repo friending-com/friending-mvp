@@ -24,10 +24,13 @@ const Modal = ({ setModal }: { setModal: () => void }) => {
       >
         <Xbutton src="/xbutton.png" onClick={setModal} />
         <Logo src="/logo.png" alt="img" />
+        <img src="/coupon.png" alt="img" width="350px" />
+
         <PlayStore>
           <img src="/playstore.png" width="60px" alt="img" />
           Download
         </PlayStore>
+
         <RequireWrapper>
           <img src="nfc.png" width="40px" alt="img" />
           NFC
