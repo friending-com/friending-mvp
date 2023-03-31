@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const Footer = ({ handleClick }: { handleClick: () => void }) => {
   return (
     <ButtonWrapper>
-      <Button>갤러리에 저장</Button>
+      <a href="/screenshot.png" download>
+        <Button>갤러리에 저장</Button>
+      </a>
       <Button onClick={handleClick}>앱 다운로드</Button>
     </ButtonWrapper>
   );
@@ -19,6 +21,10 @@ const ButtonWrapper = styled.div`
   gap: 10px;
   position: fixed;
   bottom: 10px;
+  a,
+  a:link {
+    text-decoration: none;
+  }
 `;
 const Button = styled.div`
   cursor: pointer;
