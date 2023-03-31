@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Footer = ({ handleClick }: { handleClick: () => void }) => {
@@ -19,8 +18,6 @@ const ButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  position: fixed;
-  bottom: 10px;
   a,
   a:link {
     text-decoration: none;

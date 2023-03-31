@@ -4,6 +4,7 @@ import Modal from './components/Modal';
 import { AnimatePresence, motion } from 'framer-motion';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
+import Header from './components/Header';
 function App() {
   const [modal, setModal] = useState(false);
   // const timerRef = useRef<any>(null);
@@ -19,6 +20,10 @@ function App() {
     setModal(true);
   };
 
+  const filp = () => {
+    setRotate((prev) => !prev);
+  };
+
   const animationProps = {
     initial: { rotateY: -180, opacity: 0 },
     animate: { rotateY: 0, opacity: 1, transition: { duration: 1 } },
@@ -27,40 +32,35 @@ function App() {
 
   return (
     <Wrapper>
-      <AnimatePresence>
-        {modal && <Modal setModal={() => setModal(false)} />}
-      </AnimatePresence>
-      <AnimatePresence initial={false}>
-        {rotate ? (
-          <Section
-            variants={animationProps}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            key="section"
-          >
-            <FlipButton
-              src="/flip.png"
-              onClick={() => setRotate((prev) => !prev)}
-            />
-            <Profile />
-          </Section>
-        ) : (
-          <Section
-            variants={animationProps}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            key="section1"
-          >
-            <FlipButton
-              src="/flip.png"
-              onClick={() => setRotate((prev) => !prev)}
-            />
-            <NameCard src="/namecard.jpeg" alt="img" />
-          </Section>
-        )}
-      </AnimatePresence>
+      <Header setRotate={filp} />
+      <MainWrapper>
+        <AnimatePresence>
+          {modal && <Modal setModal={() => setModal(false)} />}
+        </AnimatePresence>
+        <AnimatePresence initial={false}>
+          {rotate ? (
+            <Section
+              variants={animationProps}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              key="section"
+            >
+              <Profile />
+            </Section>
+          ) : (
+            <Section
+              variants={animationProps}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              key="section1"
+            >
+              <NameCard src="/namecard.jpeg" alt="img" />
+            </Section>
+          )}
+        </AnimatePresence>
+      </MainWrapper>
       <Footer handleClick={handleClick} />
     </Wrapper>
   );
@@ -71,10 +71,12 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   border-style: solid;
   flex-direction: column;
   max-width: 360px;
+  position: relative;
+  height: calc(var(--vh, 1vh) * 100 + 100px);
 `;
 
 const Section = styled(motion.div)`
@@ -85,19 +87,21 @@ const Section = styled(motion.div)`
   background-color: #eeeeee;
   border-radius: 25px;
   min-height: 600px;
+  max-width: 360px;
   position: absolute;
 `;
 const NameCard = styled.img`
-  width: 100%;
   max-width: 320px;
   margin-left: 20px;
   margin-right: 20px;
 `;
-
-const FlipButton = styled.img`
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  cursor: pointer;
-  width: 30px;
+const MainWrapper = styled.div`
+  position: relative;
+  max-width: 360px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 600px;
 `;
