@@ -29,7 +29,7 @@ const Profile = () => {
       <ImageWrapper>
         <Image src="/profile.jpeg" alt="profile" />
       </ImageWrapper>
-      <Name>김규민</Name>
+      <Name>이순신</Name>
       <IconWrapper>
         {LinkObjectArray.map((link) => (
           <Icon src={link.src} key={link.src} link={link.link} />
