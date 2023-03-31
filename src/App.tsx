@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Modal from './components/Modal';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,16 +7,18 @@ import Profile from './components/Profile';
 import Header from './components/Header';
 function App() {
   const [modal, setModal] = useState(false);
-  // const timerRef = useRef<any>(null);
+  const timerRef = useRef<any>(null);
   const [rotate, setRotate] = useState(true);
-  // useEffect(() => {
-  //   timerRef.current = setTimeout(() => {
-  //     setModal(true);
-  //   }, 3000);
-  //   return () => clearTimeout(timerRef.current);
-  // }, []);
+
+  useEffect(() => {
+    timerRef.current = setTimeout(() => {
+      setModal(true);
+    }, 5000);
+    return () => clearTimeout(timerRef.current);
+  }, []);
+
   const handleClick = () => {
-    // clearTimeout(timerRef.current);
+    clearTimeout(timerRef.current);
     setModal(true);
   };
 
