@@ -86,7 +86,7 @@ const Section = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   border-radius: 25px;
   min-height: 600px;
   max-width: 360px;
@@ -106,4 +106,5 @@ const MainWrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   height: 600px;
+  padding-bottom: 20px;
 `;
