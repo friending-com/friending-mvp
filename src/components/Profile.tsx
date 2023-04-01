@@ -43,8 +43,8 @@ const Profile = () => {
     else decrease();
   };
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <HeadWrapper>
         <ImageWrapper>
           <Image src="/profile.jpeg" alt="profile" />
         </ImageWrapper>
@@ -55,7 +55,7 @@ const Profile = () => {
             <Icon src={link.src} key={link.src} link={link.link} />
           ))}
         </IconWrapper>
-      </Wrapper>
+      </HeadWrapper>
 
       <AnimatePresence initial={false} custom={direction}>
         <FeatureWrapper
@@ -74,12 +74,17 @@ const Profile = () => {
           {components.map((com, i) => i === index && <div key={i}>{com}</div>)}
         </FeatureWrapper>
       </AnimatePresence>
-    </>
+    </Wrapper>
   );
 };
 
 export default Profile;
 const Wrapper = styled.div`
+  overflow: hidden;
+  border-radius: 25px;
+  background: rgb(252, 251, 252);
+`;
+const HeadWrapper = styled.div`
   background-color: #e1536f;
   width: 360px;
   display: flex;
@@ -132,9 +137,7 @@ const IconWrapper = styled.div`
 const FeatureWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-  width: 100%;
-  gap: 10px;
+  margin-top: 40px;
   background: #fcfbfc;
   box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
