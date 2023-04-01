@@ -33,7 +33,7 @@ const useSlider = <T,>(
           : direction > 0
           ? 1000
           : -1000,
-        opacity: opacity && 0,
+        opacity: 0,
         transition: {
           duration: duration ? duration : 0.5,
           type: type && type,
@@ -42,7 +42,7 @@ const useSlider = <T,>(
     },
     visible: {
       x: 0,
-      opacity: opacity && 1,
+      opacity: 1,
       transition: {
         duration: duration ? duration : 0.5,
         type: type && type,
@@ -50,7 +50,7 @@ const useSlider = <T,>(
     },
     exit: (direction: number) => {
       return {
-        opacity: opacity && 0,
+        opacity: 0,
         x: moveScale
           ? direction < 0
             ? moveScale
