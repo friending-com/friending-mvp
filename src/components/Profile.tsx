@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
+import MusicBar from './MusicBar';
+import { AnimatePresence, motion } from 'framer-motion';
+import Introduce from './Introduce';
+import Interest from './Interest';
+import useSlider from '../hook/useSlider';
+import { PanInfo } from 'framer-motion';
+
 const LinkObjectArray = [
   {
     src: '/call.png',
@@ -23,34 +30,67 @@ const LinkObjectArray = [
     link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
   },
 ];
+const components = [<Introduce />, <Interest />];
 const Profile = () => {
+  const [index, direction, increase, decrease, animationVariant] = useSlider(
+    components,
+    0.1
+  );
+  const [dragStartX, setdragStartX] = useState(0);
+  const handleScroll = (_: any, info: PanInfo) => {
+    if (dragStartX > info.point.x) increase();
+    else decrease();
+  };
   return (
     <>
-      <ImageWrapper>
-        <Image src="/profile.jpeg" alt="profile" />
-      </ImageWrapper>
-      <Name>이순신</Name>
-      <IconWrapper>
-        {LinkObjectArray.map((link) => (
-          <Icon src={link.src} key={link.src} link={link.link} />
-        ))}
-      </IconWrapper>
-      <FeatureWrapper>
-        <Feature>
-          <FeatureIcon src="fire.png" width="20px" height="20px" alt="img" />
-          춤추기
-        </Feature>
-        <Feature>
-          <FeatureIcon src="fire.png" width="20px" height="20px" alt="img" />
-          코딩하기
-        </Feature>
-      </FeatureWrapper>
+      <Wrapper>
+        <ImageWrapper>
+          <Image src="/profile.jpeg" alt="profile" />
+        </ImageWrapper>
+        <Name>이순신</Name>
+        <MusicBar />
+        <IconWrapper>
+          {LinkObjectArray.map((link) => (
+            <Icon src={link.src} key={link.src} link={link.link} />
+          ))}
+        </IconWrapper>
+      </Wrapper>
+
+      <AnimatePresence initial={false} custom={direction}>
+        <FeatureWrapper
+          drag="x"
+          key={index}
+          variants={animationVariant}
+          initial="initial"
+          animate="visible"
+          exit="exit"
+          onDragStart={(_, info) => {
+            setdragStartX((prev) => (prev = info.point.x));
+          }}
+          onDragEnd={handleScroll}
+          custom={direction}
+        >
+          {components.map((com, i) => i == index && <div key={i}>{com}</div>)}
+        </FeatureWrapper>
+      </AnimatePresence>
     </>
   );
 };
 
 export default Profile;
-
+const Wrapper = styled.div`
+  background-color: #e1536f;
+  width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding-top: 25px;
+  padding-bottom: 50px; ;
+`;
 const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -59,8 +99,8 @@ const Image = styled.img`
 `;
 const ImageWrapper = styled.div`
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,42 +108,35 @@ const ImageWrapper = styled.div`
   box-shadow: rgba(68, 64, 105, 0.08) 3px 3px 3px 3px;
 `;
 const Name = styled.div`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700px;
   margin-top: 20px;
+  color: white;
 `;
 const IconWrapper = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  position: absolute;
+  bottom: -30px;
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const FeatureWrapper = styled.div`
+const FeatureWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-  width: 95%;
+  width: 100%;
   gap: 10px;
-`;
-const Feature = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: black;
-  color: white;
-  font-size: 20px;
-  background-color: #fcbdbd;
-  border-radius: 25px;
-  height: 35px;
-`;
-const FeatureIcon = styled.img`
-  position: absolute;
-  left: 10px;
-  width: 20px;
-  height: 20px;
+  background: #fcfbfc;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-top: 50px;
+  padding-bottom: 80px;
 `;
