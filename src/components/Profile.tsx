@@ -70,7 +70,7 @@ const Profile = () => {
           onDragEnd={handleScroll}
           custom={direction}
         >
-          {components.map((com, i) => i == index && <div key={i}>{com}</div>)}
+          {components.map((com, i) => i === index && <div key={i}>{com}</div>)}
         </FeatureWrapper>
       </AnimatePresence>
     </>
