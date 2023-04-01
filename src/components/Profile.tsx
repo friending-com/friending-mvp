@@ -56,31 +56,38 @@ const Profile = () => {
           ))}
         </IconWrapper>
       </HeadWrapper>
-
-      <AnimatePresence initial={false} custom={direction}>
-        <FeatureWrapper
-          drag="x"
-          key={index}
-          variants={animationVariant}
-          initial="initial"
-          animate="visible"
-          exit="exit"
-          onDragStart={(_, info) => {
-            setdragStartX((prev) => (prev = info.point.x));
-          }}
-          onDragEnd={handleScroll}
-          custom={direction}
-        >
-          {components.map((com, i) => i === index && <div key={i}>{com}</div>)}
-        </FeatureWrapper>
-      </AnimatePresence>
+      <RelativeWrapper>
+        <AnimatePresence initial={false} custom={direction}>
+          <FeatureWrapper
+            drag="x"
+            key={index}
+            variants={animationVariant}
+            initial="initial"
+            animate="visible"
+            exit="exit"
+            onDragStart={(_, info) => {
+              setdragStartX((prev) => (prev = info.point.x));
+            }}
+            onDragEnd={handleScroll}
+            custom={direction}
+          >
+            {components.map(
+              (com, i) => i === index && <div key={i}>{com}</div>
+            )}
+          </FeatureWrapper>
+        </AnimatePresence>
+      </RelativeWrapper>
+      <IndexWrapper>
+        {Array.from({ length: components.length }).map((_, i) =>
+          i === index ? <SelectIndex /> : <Index />
+        )}
+      </IndexWrapper>
     </Wrapper>
   );
 };
 
 export default Profile;
 const Wrapper = styled.div`
-  overflow: hidden;
   border-radius: 25px;
   background: rgb(252, 251, 252);
 `;
@@ -133,15 +140,42 @@ const IconWrapper = styled.div`
   border-radius: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
-
-const FeatureWrapper = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
+const RelativeWrapper = styled.div`
   margin-top: 40px;
   background: #fcfbfc;
   box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 80px;
   height: 200px;
+  overflow: hidden;
+  position: relative;
+`;
+const FeatureWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 360px;
+  height: 280px;
+`;
+
+const Index = styled.div`
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: black;
+`;
+const SelectIndex = styled.div`
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ff7da4;
+`;
+const IndexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  padding: 5px;
 `;
