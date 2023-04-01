@@ -24,6 +24,7 @@ const Modal = ({ setModal }: { setModal: () => void }) => {
       >
         <Xbutton src="/xbutton.png" onClick={setModal} />
         <Logo src="/logo.png" alt="img" />
+        <img src="/moving.gif" alt="img" />
         <img src="/coupon.png" alt="img" width="350px" />
 
         <PlayStore>
