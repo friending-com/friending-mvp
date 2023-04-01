@@ -34,7 +34,8 @@ const components = [<Introduce />, <Interest />];
 const Profile = () => {
   const [index, direction, increase, decrease, animationVariant] = useSlider(
     components,
-    0.1
+    0.1,
+    360
   );
   const [dragStartX, setdragStartX] = useState(0);
   const handleScroll = (_: any, info: PanInfo) => {
@@ -139,4 +140,5 @@ const FeatureWrapper = styled(motion.div)`
   border-radius: 10px;
   padding-top: 50px;
   padding-bottom: 80px;
+  height: 200px;
 `;
