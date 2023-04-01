@@ -15,11 +15,11 @@ const LinkObjectArray = [
   },
   {
     src: '/instagram.png',
-    link: 'https://instagram.com/kgm0_24?igshid=ZDdkNTZiNTM=',
+    link: 'https://www.instagram.com/isunsinnn/',
   },
   {
     src: '/facebook.png',
-    link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
+    link: 'https://www.facebook.com/profile.php?id=100091051016525&mibextid=ZbWKwL',
   },
   {
     src: '/twitter.png',
@@ -27,7 +27,7 @@ const LinkObjectArray = [
   },
   {
     src: '/talk.png',
-    link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
+    link: 'https://open.kakao.com/o/s4gKh2cf',
   },
 ];
 const components = [<Introduce />, <Interest />];
