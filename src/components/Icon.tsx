@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Icon = ({ src, link }: { src: string; link: string }) => {
@@ -19,9 +18,9 @@ const IconBack = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 10px;
 `;
 const IconImg = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 `;
