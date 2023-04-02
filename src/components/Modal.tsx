@@ -27,8 +27,6 @@ const Modal = ({ setModal }: { setModal: () => void }) => {
       >
         <Xbutton src="/xbutton.png" onClick={setModal} />
         <Logo src="/logo.png" alt="img" />
-        <img src="/moving.gif" alt="img" width="320px" />
-        <img src="/coupon.png" alt="img" width="350px" />
 
         <PlayStore>
           <img src="/playstore.png" width="60px" alt="img" />
@@ -49,7 +47,6 @@ const Modal = ({ setModal }: { setModal: () => void }) => {
 export default Modal;
 const Wrapper = styled(motion.div)`
   position: absolute;
-  width: 320px;
   background-color: white;
   min-height: 400px;
   z-index: 999;
