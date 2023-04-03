@@ -26,42 +26,16 @@ function App() {
     setRotate((prev) => !prev);
   };
 
-  const animationProps = {
-    initial: { rotateY: -180, opacity: 0 },
-    animate: { rotateY: 0, opacity: 1, transition: { duration: 1 } },
-    exit: { rotateY: 180, opacity: 0, transition: { duration: 1 } },
-  };
-
   return (
     <Wrapper>
-      <Header setRotate={filp} />
+      <Header />
       <MainWrapper>
         <AnimatePresence>
           {modal && <Modal setModal={() => setModal(false)} />}
         </AnimatePresence>
-        <AnimatePresence initial={false}>
-          {rotate ? (
-            <Section
-              variants={animationProps}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              key="section"
-            >
-              <Profile />
-            </Section>
-          ) : (
-            <Section
-              variants={animationProps}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              key="section1"
-            >
-              <NameCard src="/namecard.jpeg" alt="img" />
-            </Section>
-          )}
-        </AnimatePresence>
+        <Section>
+          <Profile />
+        </Section>
       </MainWrapper>
       <Footer handleClick={handleClick} />
     </Wrapper>
@@ -92,11 +66,7 @@ const Section = styled(motion.div)`
   max-width: 360px;
   position: absolute;
 `;
-const NameCard = styled.img`
-  max-width: 320px;
-  margin-left: 20px;
-  margin-right: 20px;
-`;
+
 const MainWrapper = styled.div`
   position: relative;
   max-width: 360px;

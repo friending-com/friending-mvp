@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = ({ setRotate }: { setRotate: () => void }) => {
+const Header = () => {
   return (
     <Wrapper>
       <Title>Friending</Title>
-      <FlipButton src="/flip.png" onClick={setRotate} />
     </Wrapper>
   );
 };
