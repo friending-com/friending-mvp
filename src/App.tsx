@@ -8,7 +8,6 @@ import Header from './components/Header';
 function App() {
   const [modal, setModal] = useState(false);
   const timerRef = useRef<any>(null);
-  const [rotate, setRotate] = useState(true);
 
   useEffect(() => {
     timerRef.current = setTimeout(() => {
@@ -20,10 +19,6 @@ function App() {
   const handleClick = () => {
     clearTimeout(timerRef.current);
     setModal(true);
-  };
-
-  const filp = () => {
-    setRotate((prev) => !prev);
   };
 
   return (

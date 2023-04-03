@@ -23,8 +23,3 @@ const Title = styled.div`
   font-size: 30px;
   margin-left: 15px;
 `;
-const FlipButton = styled.img`
-  cursor: pointer;
-  width: 30px;
-  margin-right: 15px;
-`;
