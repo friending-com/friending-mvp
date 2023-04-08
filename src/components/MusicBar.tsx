@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const MusicBar = () => {
   return (
     <Wrapper>
-      <PlayTime value="65" max="100" />
+      <PlayTime value="53" max="100" />
       <MusicDot />
+      <Age>53세</Age>
     </Wrapper>
   );
 };
@@ -53,5 +54,12 @@ const MusicDot = styled.div`
   background: #fff6f6;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
-  left: 62%;
+  left: 53%;
+`;
+const Age = styled.div`
+  position: absolute;
+  left: 51.5%;
+  font-size: 10px;
+  top: 25px;
+  color: white;
 `;
