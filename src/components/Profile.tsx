@@ -11,7 +11,7 @@ import { PanInfo } from 'framer-motion';
 const LinkObjectArray = [
   {
     src: '/call.png',
-    link: '010-4854-3312',
+    link: '010-1234-5678',
   },
   {
     src: '/instagram.png',
