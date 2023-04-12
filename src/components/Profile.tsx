@@ -23,7 +23,7 @@ const LinkObjectArray = [
   },
   {
     src: '/twitter.png',
-    link: 'https://twitter.com/hVG5DrtLn08n7TA',
+    link: 'https://twitter.com/_890uuu?t=_rbjxJjgYpvmMpWDqVy4yQ&s=09',
   },
   {
     src: '/talk.png',
