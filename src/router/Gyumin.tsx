@@ -64,7 +64,7 @@ function Gyumin() {
         img: 'writer.png',
       },
     ],
-    interest: ['창업', 'Friending', 'Seller', '산책', '공상'],
+    interest: ['창업', 'Friending', '산책', 'Seller X', '공상'],
   };
   return (
     <Wrapper>
@@ -77,7 +77,7 @@ function Gyumin() {
           <Profile userData={userData} linkObj={LinkObjectArray} />
         </Section>
       </MainWrapper>
-      <Footer handleClick={handleClick} />
+      <Footer handleClick={handleClick} fileName="screenshot2" />
     </Wrapper>
   );
 }

@@ -71,7 +71,7 @@ function App() {
           <Profile userData={userData} linkObj={LinkObjectArray} />
         </Section>
       </MainWrapper>
-      <Footer handleClick={handleClick} />
+      <Footer handleClick={handleClick} fileName="screenshot" />
     </Wrapper>
   );
 }
