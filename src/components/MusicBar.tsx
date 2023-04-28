@@ -6,7 +6,7 @@ const MusicBar = ({ age }: { age: number }) => {
     <Wrapper>
       <PlayTime value={age} max="100" />
       <MusicDot age={age} />
-      <Age>{age}세</Age>
+      <Age age={age}>{age}세</Age>
     </Wrapper>
   );
 };
@@ -56,9 +56,9 @@ const MusicDot = styled.div<{ age: number }>`
   border-radius: 50%;
   left: ${(props) => String(props.age)}%;
 `;
-const Age = styled.div`
+const Age = styled.div<{ age: number }>`
   position: absolute;
-  left: 51.5%;
+  left: ${(props) => props.age - 1.5}%;
   font-size: 10px;
   top: 25px;
   color: white;
