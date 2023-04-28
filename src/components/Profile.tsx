@@ -7,29 +7,6 @@ import Introduce from './Introduce';
 import Interest from './Interest';
 import useSlider from '../hook/useSlider';
 import { PanInfo } from 'framer-motion';
-
-const LinkObjectArray = [
-  {
-    src: '/call.png',
-    link: '010-1234-5678',
-  },
-  {
-    src: '/instagram.png',
-    link: 'https://www.instagram.com/isunsinnn/',
-  },
-  {
-    src: '/facebook.png',
-    link: 'https://www.facebook.com/profile.php?id=100091051016525&mibextid=ZbWKwL',
-  },
-  {
-    src: '/twitter.png',
-    link: 'https://twitter.com/_890uuu?t=_rbjxJjgYpvmMpWDqVy4yQ&s=09',
-  },
-  {
-    src: '/talk.png',
-    link: 'https://open.kakao.com/o/s4gKh2cf',
-  },
-];
 interface link {
   src: string;
   link: string;
