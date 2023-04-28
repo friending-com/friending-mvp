@@ -30,8 +30,32 @@ const LinkObjectArray = [
     link: 'https://open.kakao.com/o/s4gKh2cf',
   },
 ];
-const components = [<Introduce />, <Interest />];
-const Profile = () => {
+interface link {
+  src: string;
+  link: string;
+}
+interface IUserData {
+  name: string;
+  age: number;
+  img: string;
+  hashTag: {
+    tag: string;
+    img: string;
+  }[];
+  interest: string[];
+}
+
+const Profile = ({
+  userData,
+  linkObj,
+}: {
+  userData: IUserData;
+  linkObj: link[];
+}) => {
+  const components = [
+    <Introduce data={userData.hashTag} />,
+    <Interest name={userData.name} interest={userData.interest} />,
+  ];
   const [index, direction, increase, decrease, animationVariant] = useSlider(
     components,
     0.1,
@@ -46,12 +70,12 @@ const Profile = () => {
     <Wrapper>
       <HeadWrapper>
         <ImageWrapper>
-          <Image src="/profile.jpeg" alt="profile" />
+          <Image src={userData.img} alt="profile" />
         </ImageWrapper>
-        <Name>이순신</Name>
-        <MusicBar />
+        <Name>{userData.name}</Name>
+        <MusicBar age={userData.age} />
         <IconWrapper>
-          {LinkObjectArray.map((link) => (
+          {linkObj.map((link) => (
             <Icon src={link.src} key={link.src} link={link.link} />
           ))}
         </IconWrapper>
@@ -102,7 +126,7 @@ const HeadWrapper = styled.div`
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   padding-top: 25px;
-  padding-bottom: 50px; ;
+  padding-bottom: 50px;
 `;
 const Image = styled.img`
   width: 100%;

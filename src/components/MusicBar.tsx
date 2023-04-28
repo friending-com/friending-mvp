@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MusicBar = () => {
+const MusicBar = ({ age }: { age: number }) => {
   return (
     <Wrapper>
-      <PlayTime value="53" max="100" />
-      <MusicDot />
-      <Age>53세</Age>
+      <PlayTime value={age} max="100" />
+      <MusicDot age={age} />
+      <Age>{age}세</Age>
     </Wrapper>
   );
 };
@@ -47,14 +47,14 @@ const PlayTime = styled.progress`
     border-radius: 10px;
   }
 `;
-const MusicDot = styled.div`
+const MusicDot = styled.div<{ age: number }>`
   position: absolute;
   width: 10px;
   height: 10px;
   background: #fff6f6;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
-  left: 53%;
+  left: ${(props) => String(props.age)}%;
 `;
 const Age = styled.div`
   position: absolute;

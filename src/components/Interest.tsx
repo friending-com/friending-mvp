@@ -1,46 +1,47 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-const circleData = [
-  {
-    size: '185px',
-    x: '0px',
-    y: '0px',
-    color: '#FF7DA4',
-    text: '등산',
-  },
-  {
-    size: '100px',
-    x: '10px',
-    y: '185px',
-    color: '#FF8A80',
-    text: '활쏘기',
-  },
-  {
-    size: '54px',
-    x: '90px',
-    y: '262px',
-    color: '#B880FF',
-    text: '산책',
-  },
-  {
-    size: '100px',
-    x: '125px',
-    y: '180px',
-    color: '#8A80FF',
-    text: '말타기',
-  },
-  {
-    size: '60px',
-    x: '180px',
-    y: '120px',
-    color: '#FFEB80',
-    text: '요리',
-  },
-];
-const Interest = () => {
+
+const Interest = ({ name, interest }: { name: string; interest: string[] }) => {
+  const circleData = [
+    {
+      size: '185px',
+      x: '0px',
+      y: '0px',
+      color: '#FF7DA4',
+      text: interest[0],
+    },
+    {
+      size: '100px',
+      x: '10px',
+      y: '185px',
+      color: '#FF8A80',
+      text: interest[1],
+    },
+    {
+      size: '54px',
+      x: '90px',
+      y: '262px',
+      color: '#B880FF',
+      text: interest[2],
+    },
+    {
+      size: '100px',
+      x: '125px',
+      y: '180px',
+      color: '#8A80FF',
+      text: interest[3],
+    },
+    {
+      size: '60px',
+      x: '180px',
+      y: '120px',
+      color: '#FFEB80',
+      text: interest[4],
+    },
+  ];
   return (
     <Wrapper>
-      <Title>이순신님의 관심사</Title>
+      <Title>{name}님의 관심사</Title>
       <CircleWrapper>
         {circleData.map((data) => (
           <Circle

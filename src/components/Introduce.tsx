@@ -2,33 +2,19 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
-const Introduce = () => {
+const Introduce = ({ data }: { data: { tag: string; img: string }[] }) => {
   return (
     <>
-      <Feature
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <FeatureIcon src="solider.png" alt="img" />
-        전라좌도 수군절도사
-      </Feature>
-      <Feature
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <FeatureIcon src="birth.png" width="33px" height="33px" alt="img" />
-        1545년생
-      </Feature>
-      <Feature
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <FeatureIcon src="writer.png" width="33px" height="33px" alt="img" />
-        난중일기 저자
-      </Feature>
+      {data.map((hashTag) => (
+        <Feature
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <FeatureIcon src={hashTag.img} alt="img" />
+          {hashTag.tag}
+        </Feature>
+      ))}
     </>
   );
 };

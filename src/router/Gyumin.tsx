@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import Modal from './components/Modal';
+import Modal from '../components/Modal';
 import { AnimatePresence, motion } from 'framer-motion';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import Header from './components/Header';
-function App() {
+import Footer from '../components/Footer';
+import Profile from '../components/Profile';
+import Header from '../components/Header';
+function Gyumin() {
   const [modal, setModal] = useState(false);
   const timerRef = useRef<any>(null);
 
@@ -20,45 +20,51 @@ function App() {
     clearTimeout(timerRef.current);
     setModal(true);
   };
-
   const LinkObjectArray = [
     {
       src: '/call.png',
-      link: '010-1234-5678',
+      link: '010-4854-3312',
     },
     {
       src: '/instagram.png',
-      link: 'https://www.instagram.com/isunsinnn/',
+      link: 'https://instagram.com/kgm0_24?igshid=ZDdkNTZiNTM=',
     },
     {
       src: '/facebook.png',
-      link: 'https://www.facebook.com/profile.php?id=100091051016525&mibextid=ZbWKwL',
+      link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
     },
     {
       src: '/twitter.png',
-      link: 'https://twitter.com/_890uuu?t=_rbjxJjgYpvmMpWDqVy4yQ&s=09',
+      link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
     },
     {
       src: '/talk.png',
-      link: 'https://open.kakao.com/o/s4gKh2cf',
+      link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
     },
   ];
   const userData = {
-    name: '이순신',
-    age: 53,
-    img: '/profile.jpeg',
+    name: '김규민',
+    age: 22,
+    img: '/gyumin.jpeg',
     hashTag: [
-      { tag: '전라좌도 수군절도사', img: 'solider.png' },
       {
-        tag: '1545년생',
-        img: 'birth.png',
+        tag: 'Friending CEO',
+        img: 'writer.png',
       },
       {
-        tag: '난중일기 저자',
+        tag: 'DGIST 기초학부 3학년',
+        img: 'writer.png',
+      },
+      {
+        tag: 'Seller X _ Ai',
+        img: 'writer.png',
+      },
+      {
+        tag: '물리학 전공',
         img: 'writer.png',
       },
     ],
-    interest: ['등산', '활쏘기', '산책', '말타기', '요리'],
+    interest: ['창업', 'Friending', 'Seller', '산책', '공상'],
   };
   return (
     <Wrapper>
@@ -76,7 +82,7 @@ function App() {
   );
 }
 
-export default App;
+export default Gyumin;
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
