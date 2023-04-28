@@ -43,8 +43,9 @@ const Interest = ({ name, interest }: { name: string; interest: string[] }) => {
     <Wrapper>
       <Title>{name}님의 관심사</Title>
       <CircleWrapper>
-        {circleData.map((data) => (
+        {circleData.map((data, index) => (
           <Circle
+            key={index}
             size={data.size}
             color={data.color}
             initial={{ scale: 0 }}

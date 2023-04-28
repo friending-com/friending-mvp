@@ -5,8 +5,9 @@ import styled from 'styled-components';
 const Introduce = ({ data }: { data: { tag: string; img: string }[] }) => {
   return (
     <>
-      {data.map((hashTag) => (
+      {data.map((hashTag, index) => (
         <Feature
+          key={index}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
