@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-const Footer = ({ handleClick }: { handleClick: () => void }) => {
+const Footer = ({
+  handleClick,
+  fileName,
+}: {
+  handleClick: () => void;
+  fileName: string;
+}) => {
   return (
     <ButtonWrapper>
-      <a href="/screenshot.png" download>
+      <a href={`/${fileName}.png`} download>
         <Button>갤러리에 저장</Button>
       </a>
       <Button onClick={handleClick}>앱 다운로드</Button>
