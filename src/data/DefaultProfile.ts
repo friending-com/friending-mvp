@@ -28,11 +28,11 @@ export const userData = {
     { type: '학력', value: '보스턴대학교 경영학전공' },
     {
       type: '회사',
-      value: '카카오 모빌리티 ',
+      value: 'Friending ',
     },
     {
       type: '직업',
-      value: '프로덕트 디자이너 10년차',
+      value: 'Friending CEO',
     },
     {
       type: '기타',
