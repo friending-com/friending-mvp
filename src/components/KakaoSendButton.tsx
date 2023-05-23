@@ -4,7 +4,7 @@ const { Kakao } = window as any;
 const KakaoSendButton = () => {
   useEffect(() => {
     createKaKaoButton();
-  }, [Kakao]);
+  }, []);
   console.log(Kakao);
   console.log((window as any).Kakao);
   const createKaKaoButton = () => {
