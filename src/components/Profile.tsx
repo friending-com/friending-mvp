@@ -15,10 +15,7 @@ interface IUserData {
   name: string;
   age: number;
   img: string;
-  hashTag: {
-    tag: string;
-    img: string;
-  }[];
+  hashTag: string[];
   interest: string[];
 }
 
@@ -50,7 +47,7 @@ const Profile = ({
           <Image src={userData.img} alt="profile" />
         </ImageWrapper>
         <Name>{userData.name}</Name>
-        <MusicBar age={userData.age} />
+        <SubTitle>Friending CEO</SubTitle>
         <IconWrapper>
           {linkObj.map((link) => (
             <Icon src={link.src} key={link.src} link={link.link} />
@@ -89,12 +86,17 @@ const Profile = ({
 
 export default Profile;
 const Wrapper = styled.div`
-  border-radius: 25px;
-  background: rgb(252, 251, 252);
+  margin-top: 20px;
+  background: #ffffff;
+  width: 90%;
+`;
+const SubTitle = styled.div`
+  color: #666666;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 12px;
 `;
 const HeadWrapper = styled.div`
-  background-color: #e1536f;
-  width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,10 +124,11 @@ const ImageWrapper = styled.div`
   box-shadow: rgba(68, 64, 105, 0.08) 3px 3px 3px 3px;
 `;
 const Name = styled.div`
-  font-size: 25px;
-  font-weight: 700px;
   margin-top: 20px;
-  color: white;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
 `;
 const IconWrapper = styled.div`
   display: flex;
@@ -138,8 +141,6 @@ const IconWrapper = styled.div`
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
-  border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 const RelativeWrapper = styled.div`
   margin-top: 40px;
@@ -156,7 +157,7 @@ const FeatureWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 360px;
+  width: 100%;
   height: 280px;
 `;
 

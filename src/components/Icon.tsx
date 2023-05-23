@@ -15,13 +15,12 @@ export default Icon;
 const IconBack = styled(motion.div)`
   width: 50px;
   height: 50px;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
 `;
 const IconImg = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
 `;

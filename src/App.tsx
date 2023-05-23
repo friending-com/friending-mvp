@@ -31,10 +31,6 @@ function App() {
       link: 'https://www.instagram.com/isunsinnn/',
     },
     {
-      src: '/facebook.png',
-      link: 'https://www.facebook.com/profile.php?id=100091051016525&mibextid=ZbWKwL',
-    },
-    {
       src: '/twitter.png',
       link: 'https://twitter.com/_890uuu?t=_rbjxJjgYpvmMpWDqVy4yQ&s=09',
     },
@@ -42,21 +38,19 @@ function App() {
       src: '/talk.png',
       link: 'https://open.kakao.com/o/s4gKh2cf',
     },
+    {
+      src: '/etc.png',
+      link: '',
+    },
   ];
   const userData = {
-    name: '이순신',
+    name: '문소리',
     age: 53,
-    img: '/profile.jpeg',
+    img: '/profile.png',
     hashTag: [
-      { tag: '전라좌도 수군절도사', img: 'solider.png' },
-      {
-        tag: '1545년생',
-        img: 'birth.png',
-      },
-      {
-        tag: '난중일기 저자',
-        img: 'writer.png',
-      },
+      '보스턴대학교 경영학전공',
+      '카카오 모빌리티 프로덕트 디자이너',
+      'DeepL AI ToolChains of KSM',
     ],
     interest: ['등산', '활쏘기', '산책', '말타기', '요리'],
   };
@@ -67,9 +61,7 @@ function App() {
         <AnimatePresence>
           {modal && <Modal setModal={() => setModal(false)} />}
         </AnimatePresence>
-        <Section>
-          <Profile userData={userData} linkObj={LinkObjectArray} />
-        </Section>
+        <Profile userData={userData} linkObj={LinkObjectArray} />
       </MainWrapper>
       <Footer handleClick={handleClick} fileName="screenshot" />
     </Wrapper>
@@ -87,6 +79,13 @@ const Wrapper = styled.div`
   max-width: 360px;
   position: relative;
   height: calc(var(--vh, 1vh) * 100 + 100px);
+  background: linear-gradient(
+    172.17deg,
+    #fff7a8 11.44%,
+    #a8e0ff 26.14%,
+    #a8ceff 76.41%,
+    #b9d5ff 102.49%
+  );
 `;
 
 const Section = styled(motion.div)`
@@ -96,6 +95,7 @@ const Section = styled(motion.div)`
   justify-content: center;
   background-color: #ffffff;
   border-radius: 25px;
+  width: 90%;
   min-height: 600px;
   max-width: 360px;
   position: absolute;

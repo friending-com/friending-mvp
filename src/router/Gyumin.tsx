@@ -30,10 +30,6 @@ function Gyumin() {
       link: 'https://instagram.com/kgm0_24?igshid=ZDdkNTZiNTM=',
     },
     {
-      src: '/facebook.png',
-      link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
-    },
-    {
       src: '/twitter.png',
       link: 'https://www.facebook.com/profile.php?id=100010314162778&mibextid=ZbWKwL',
     },
@@ -41,28 +37,20 @@ function Gyumin() {
       src: '/talk.png',
       link: 'http://qr.kakao.com/talk/VRmFvjPr99eMWZ3iw72qoy5BndE-',
     },
+    {
+      src: '/etc.png',
+      link: '',
+    },
   ];
   const userData = {
     name: '김규민',
     age: 22,
     img: '/gyumin.jpeg',
     hashTag: [
-      {
-        tag: 'Friending CEO',
-        img: 'writer.png',
-      },
-      {
-        tag: 'DGIST 기초학부 3학년',
-        img: 'writer.png',
-      },
-      {
-        tag: 'Seller X _ Ai',
-        img: 'writer.png',
-      },
-      {
-        tag: '물리학 전공',
-        img: 'writer.png',
-      },
+      'Friending CEO',
+      'DGIST 기초학부 3학년',
+      'Seller X _ Ai',
+      '물리학 전공',
     ],
     interest: ['창업', 'Friending', '산책', 'Seller X', '공상'],
   };
@@ -93,6 +81,13 @@ const Wrapper = styled.div`
   max-width: 360px;
   position: relative;
   height: calc(var(--vh, 1vh) * 100 + 100px);
+  background: linear-gradient(
+    172.17deg,
+    #fff7a8 11.44%,
+    #a8e0ff 26.14%,
+    #a8ceff 76.41%,
+    #b9d5ff 102.49%
+  );
 `;
 
 const Section = styled(motion.div)`
@@ -102,6 +97,7 @@ const Section = styled(motion.div)`
   justify-content: center;
   background-color: #ffffff;
   border-radius: 25px;
+  width: 90%;
   min-height: 600px;
   max-width: 360px;
   position: absolute;
