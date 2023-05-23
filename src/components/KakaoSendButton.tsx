@@ -5,43 +5,27 @@ const KakaoSendButton = () => {
   useEffect(() => {
     createKaKaoButton();
   }, []);
-  console.log(Kakao);
-  console.log((window as any).Kakao);
   const createKaKaoButton = () => {
     if (Kakao) {
-      if (!Kakao.isinitialized()) {
+      if (!Kakao.isInitialized()) {
         Kakao.init(process.env.REACT_APP_KAKAO_KEY);
       }
-      Kakao.Link.createDefaultButton({
+      Kakao.Share.createDefaultButton({
         container: '#kakao-link-btn',
         objectType: 'feed',
         content: {
-          title: '타이틀',
-          description: '#리액트 #카카오 #공유버튼',
-
+          title: 'Friending',
+          description: '새로운 SNS플랫폼 Friending',
+          imageUrl: 'http://friending.online/friending.png',
           link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
+            webUrl: 'http://friending.online',
           },
-        },
-        social: {
-          likeCount: 77,
-          commentCount: 55,
-          sharedCount: 333,
         },
         buttons: [
           {
             title: '웹으로 보기',
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
-            },
-          },
-          {
-            title: '앱으로 보기',
-            link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              webUrl: 'http://friending.online',
             },
           },
         ],

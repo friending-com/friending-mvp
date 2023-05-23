@@ -5,7 +5,7 @@ const Kakao = () => {
     <>
       <HelmetProvider>
         <Helmet>
-          <script src="https://developers.kakao.com/sdk/js/kakao.js" />
+ 
         </Helmet>
       </HelmetProvider>
       <KakaoSendButton />
