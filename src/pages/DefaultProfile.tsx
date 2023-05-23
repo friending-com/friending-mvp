@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { LinkObjectArray, userData } from '../data/DefaultProfile';
 import { AnimatePresence } from 'framer-motion';
-import Modal from '../components/Modal';
-import Header from '../components/Header';
+import Modal from '../components/modal/Modal';
+import Header from '../components/background/Header';
 import Profile from '../components/Profile';
-import Footer from '../components/Footer';
+import Footer from '../components/background/Footer';
 
 const DefaultProfile = () => {
   const [modal, setModal] = useState(false);
