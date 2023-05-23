@@ -41,9 +41,3 @@ const Feature = styled(motion.div)`
   border-radius: 8px;
   width: 80%;
 `;
-const FeatureIcon = styled.img`
-  position: absolute;
-  left: 10px;
-  width: 33px;
-  height: 33px;
-`;

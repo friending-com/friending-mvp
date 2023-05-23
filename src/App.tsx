@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Modal from './components/Modal';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
 import Header from './components/Header';
@@ -86,19 +86,6 @@ const Wrapper = styled.div`
     #a8ceff 76.41%,
     #b9d5ff 102.49%
   );
-`;
-
-const Section = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  border-radius: 25px;
-  width: 90%;
-  min-height: 600px;
-  max-width: 360px;
-  position: absolute;
 `;
 
 const MainWrapper = styled.div`

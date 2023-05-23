@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
-import MusicBar from './MusicBar';
 import { AnimatePresence, motion } from 'framer-motion';
 import Introduce from './Introduce';
 import Interest from './Interest';
