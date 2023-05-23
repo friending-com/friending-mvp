@@ -21,7 +21,7 @@ interface IUserData {
   }[];
   interest: string[];
 }
-interface Index {
+interface IIndex {
   index: number;
 }
 
@@ -150,7 +150,7 @@ const IconWrapper = styled.div`
   gap: 10px;
   margin-top: 20px;
 `;
-const RelativeWrapper = styled.div<Index>`
+const RelativeWrapper = styled.div<IIndex>`
   margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 10px;
