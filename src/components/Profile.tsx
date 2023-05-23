@@ -6,7 +6,7 @@ import Introduce from './Introduce';
 import Interest from './Interest';
 import useSlider from '../hook/useSlider';
 import { PanInfo } from 'framer-motion';
-import Kakao from './Kakao';
+import KakaoSendButton from './KakaoSendButton';
 interface link {
   src: string;
   link: string;
@@ -78,7 +78,7 @@ const Profile = ({
           </FeatureWrapper>
         </AnimatePresence>
       </RelativeWrapper>
-      <Kakao />
+      <KakaoSendButton />
       <IndexWrapper>
         {Array.from({ length: components.length }).map((_, i) =>
           i === index ? <SelectIndex /> : <Index />
