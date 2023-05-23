@@ -6,6 +6,7 @@ import Introduce from './Introduce';
 import Interest from './Interest';
 import useSlider from '../hook/useSlider';
 import { PanInfo } from 'framer-motion';
+import Kakao from './Kakao';
 interface link {
   src: string;
   link: string;
@@ -77,6 +78,7 @@ const Profile = ({
           </FeatureWrapper>
         </AnimatePresence>
       </RelativeWrapper>
+      <Kakao />
       <IndexWrapper>
         {Array.from({ length: components.length }).map((_, i) =>
           i === index ? <SelectIndex /> : <Index />
@@ -148,7 +150,7 @@ const IconWrapper = styled.div`
 const RelativeWrapper = styled.div`
   margin-top: 40px;
   padding-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   height: 200px;
   overflow: hidden;
   position: relative;
@@ -158,7 +160,6 @@ const FeatureWrapper = styled(motion.div)`
   flex-direction: column;
   position: absolute;
   width: 100%;
-  height: 280px;
 `;
 
 const Index = styled.div`
