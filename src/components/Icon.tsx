@@ -13,14 +13,14 @@ const Icon = ({ src, link }: { src: string; link: string }) => {
 
 export default Icon;
 const IconBack = styled(motion.div)`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
 `;
 const IconImg = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 `;

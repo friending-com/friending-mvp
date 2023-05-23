@@ -14,7 +14,10 @@ interface IUserData {
   name: string;
   age: number;
   img: string;
-  hashTag: string[];
+  hashTag: {
+    type: string;
+    value: string;
+  }[];
   interest: string[];
 }
 
@@ -88,6 +91,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   background: #ffffff;
   width: 90%;
+  border-radius: 20px;
 `;
 const SubTitle = styled.div`
   color: #666666;

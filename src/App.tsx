@@ -48,9 +48,19 @@ function App() {
     age: 53,
     img: '/profile.png',
     hashTag: [
-      '보스턴대학교 경영학전공',
-      '카카오 모빌리티 프로덕트 디자이너',
-      'DeepL AI ToolChains of KSM',
+      { type: '학력', value: '보스턴대학교 경영학전공' },
+      {
+        type: '회사',
+        value: '카카오 모빌리티 ',
+      },
+      {
+        type: '직업',
+        value: '프로덕트 디자이너 10년차',
+      },
+      {
+        type: '기타',
+        value: 'Venture X Futura',
+      },
     ],
     interest: ['등산', '활쏘기', '산책', '말타기', '요리'],
   };

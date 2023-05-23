@@ -47,10 +47,19 @@ function Gyumin() {
     age: 22,
     img: '/gyumin.jpeg',
     hashTag: [
-      'Friending CEO',
-      'DGIST 기초학부 3학년',
-      'Seller X _ Ai',
-      '물리학 전공',
+      { type: '학력', value: 'DGIST 기초학부 3학년' },
+      {
+        type: '회사',
+        value: 'Friending',
+      },
+      {
+        type: '직업',
+        value: 'Friending CEO',
+      },
+      {
+        type: '기타',
+        value: 'Seller X _ Ai',
+      },
     ],
     interest: ['창업', 'Friending', '산책', 'Seller X', '공상'],
   };
