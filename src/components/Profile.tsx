@@ -143,9 +143,6 @@ const IconWrapper = styled.div`
 `;
 const RelativeWrapper = styled.div`
   margin-top: 40px;
-  background: #fcfbfc;
-  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
   padding-top: 20px;
   padding-bottom: 80px;
   height: 200px;

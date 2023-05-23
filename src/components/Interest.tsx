@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Interest = ({ name, interest }: { name: string; interest: string[] }) => {
   const circleData = [
     {
-      size: '185px',
+      size: '170px',
       x: '0px',
       y: '0px',
       color: '#FF7DA4',
@@ -13,28 +13,28 @@ const Interest = ({ name, interest }: { name: string; interest: string[] }) => {
     {
       size: '100px',
       x: '10px',
-      y: '185px',
+      y: '170px',
       color: '#FF8A80',
       text: interest[1],
     },
     {
       size: '54px',
-      x: '90px',
-      y: '262px',
+      x: '95px',
+      y: '245px',
       color: '#B880FF',
       text: interest[2],
     },
     {
       size: '100px',
       x: '125px',
-      y: '180px',
+      y: '160px',
       color: '#8A80FF',
       text: interest[3],
     },
     {
       size: '60px',
-      x: '180px',
-      y: '120px',
+      x: '170px',
+      y: '100px',
       color: '#FFEB80',
       text: interest[4],
     },
