@@ -21,6 +21,9 @@ interface IUserData {
   }[];
   interest: string[];
 }
+interface Index {
+  index: number;
+}
 
 const Profile = ({
   userData,
@@ -57,7 +60,7 @@ const Profile = ({
           ))}
         </IconWrapper>
       </HeadWrapper>
-      <RelativeWrapper>
+      <RelativeWrapper index={index}>
         <AnimatePresence initial={false} custom={direction}>
           <FeatureWrapper
             drag="x"
@@ -147,11 +150,11 @@ const IconWrapper = styled.div`
   gap: 10px;
   margin-top: 20px;
 `;
-const RelativeWrapper = styled.div`
+const RelativeWrapper = styled.div<Index>`
   margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 10px;
-  height: 200px;
+  height: ${(props) => (props.index === 0 ? '200px' : '300px')};
   overflow: hidden;
   position: relative;
 `;
