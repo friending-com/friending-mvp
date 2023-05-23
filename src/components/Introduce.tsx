@@ -71,7 +71,7 @@ const UnderLineWrapper = styled.div<IFeature>`
   justify-content: center;
   font-size: 15px;
   font-family: 'Pretendard';
-  height: 44px;
+  height: 50px;
   font-weight: 500;
   border-color: #e2e2e2;
 `;
