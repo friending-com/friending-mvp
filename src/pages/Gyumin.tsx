@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/modal/Modal';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import Footer from '../components/background/Footer';
 import Profile from '../components/Profile';
 import Header from '../components/background/Header';
