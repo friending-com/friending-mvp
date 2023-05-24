@@ -29,9 +29,7 @@ function Gyumin() {
         <AnimatePresence>
           {modal && <Modal setModal={() => setModal(false)} />}
         </AnimatePresence>
-        <Section>
-          <Profile userData={GyuData} linkObj={GyuLinkObjectArray} />
-        </Section>
+        <Profile userData={GyuData} linkObj={GyuLinkObjectArray} />
       </MainWrapper>
       <Footer handleClick={handleClick} fileName="screenshot2" />
     </Wrapper>
@@ -57,20 +55,6 @@ const Wrapper = styled.div`
     #b9d5ff 102.49%
   );
 `;
-
-const Section = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  border-radius: 25px;
-  width: 90%;
-  min-height: 600px;
-  max-width: 360px;
-  position: absolute;
-`;
-
 const MainWrapper = styled.div`
   position: relative;
   max-width: 360px;
