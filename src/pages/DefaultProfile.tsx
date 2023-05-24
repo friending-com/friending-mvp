@@ -47,13 +47,7 @@ const Wrapper = styled.div`
   max-width: 360px;
   position: relative;
   height: calc(var(--vh, 1vh) * 100 + 100px);
-  background: linear-gradient(
-    172.17deg,
-    #fff7a8 11.44%,
-    #a8e0ff 26.14%,
-    #a8ceff 76.41%,
-    #b9d5ff 102.49%
-  );
+  background-image:url("background.png"); 
 `;
 
 const MainWrapper = styled.div`
