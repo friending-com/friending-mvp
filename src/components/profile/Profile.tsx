@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 import Introduce from './components/HashTagSection/Introduce';
@@ -6,7 +6,6 @@ import Interest from './components/HashTagSection/Interest';
 import useSlider from '../../hook/useSlider';
 import { PanInfo } from 'framer-motion';
 import KakaoSendButton from './components/KakaoSendButton';
-import SNSSection from './components/SNSSection/SNSSection';
 import Header from './components/Header';
 export interface link {
   src: string;
