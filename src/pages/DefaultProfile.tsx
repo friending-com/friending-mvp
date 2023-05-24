@@ -4,7 +4,7 @@ import { LinkObjectArray, userData } from '../data/DefaultProfile';
 import { AnimatePresence } from 'framer-motion';
 import Modal from '../components/modal/Modal';
 import Header from '../components/background/Header';
-import Profile from '../components/Profile';
+import Profile from '../components/profile/Profile';
 import Footer from '../components/background/Footer';
 
 const DefaultProfile = () => {

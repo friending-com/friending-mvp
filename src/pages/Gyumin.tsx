@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Modal from '../components/modal/Modal';
 import { AnimatePresence } from 'framer-motion';
 import Footer from '../components/background/Footer';
-import Profile from '../components/Profile';
+import Profile from '../components/profile/Profile';
 import Header from '../components/background/Header';
 import { GyuData, GyuLinkObjectArray } from '../data/Gyumin';
 function Gyumin() {
